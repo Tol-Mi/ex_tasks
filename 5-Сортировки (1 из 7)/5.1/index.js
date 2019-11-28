@@ -28,7 +28,7 @@ function selectionSort(arr) {
 	return arr;
 }
 
-let arr = [1, 9, 2, 3, 7, 6, 4, 5, 5]
+let arr = [1, 9, 2, 3, 7, 6, 4, 5, 5];
 
 console.log(bubbleSort(arr));
 
