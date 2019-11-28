@@ -12,7 +12,8 @@ function addingElementToStart(list, element) {
 	for(let i = list.length - 1; i >= 0; i--) {
 		list[i + 1] = list[i];
 	}
-	list[0] = [element, list[1][0]];
+    list[0] = [element, list[1][0]];
+    list[1][2] = element;
 	return list;
 }
 
@@ -26,6 +27,14 @@ let list = [
 
 console.log(highestValueSearch(list));
 
-list = addingElementToStart(list, 999);
+bidirectionalList = [
+    [2, 6, null],
+    [6, 7, 2],
+    [7, 1, 6],
+    [1, 18, 7],
+    [18, null, 1]
+];
 
-console.log(list);
+bidirectionalList = addingElementToStart(bidirectionalList, 999);
+
+console.log(bidirectionalList);
