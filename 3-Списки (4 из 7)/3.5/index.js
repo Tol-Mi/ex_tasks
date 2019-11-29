@@ -27,11 +27,11 @@ function descSorted(list) {
 }
 
 let list = [
-    [6, 6, null],
-    [5, 7, 2],
-    [1, 1, 6],
-    [3, 18, 7],
-    [2, null, 1]
+    [6, null, 5],
+    [5, 6, 1],
+    [1, 5, 3],
+    [3, 1, 2],
+    [2, 3, null]
 ];
 
 if(ascSorted(list) == true || descSorted(list) == true) {
