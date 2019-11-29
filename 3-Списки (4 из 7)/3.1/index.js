@@ -17,6 +17,7 @@ function addingElementToStart(list, element) {
 	return list;
 }
 
+// Элемент, родитель
 let list = [
     [2, 6],
     [6, 7],
@@ -27,6 +28,7 @@ let list = [
 
 console.log(highestValueSearch(list));
 
+// Элемент, дочь, родитель
 bidirectionalList = [
     [2, 6, null],
     [6, 7, 2],

@@ -26,6 +26,7 @@ function descSorted(list) {
     return sorted;
 }
 
+// Элемент, родитель, дочь
 let list = [
     [6, null, 5],
     [5, 6, 1],
