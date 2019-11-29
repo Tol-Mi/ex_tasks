@@ -8,6 +8,6 @@ function linearSearch(array, element) {
 }
 
 let array = ['1', '2', '3', '4', '5'];
-let element = 3;
+let element = '3';
 
 alert(linearSearch(array, element));
