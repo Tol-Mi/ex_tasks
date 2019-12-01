@@ -9,8 +9,10 @@
 </head>
 <body>
 <script>
-    const ePosition = 'е'.charCodeAt();
-    let string = 'АААА ЯЯ ППППППРРРРРРРРГАВАВГРАГВШРГШР';
+    const regardingLetter = 'е';
+    const regardingLetterPosition = regardingLetter.charCodeAt();
+    let string = 'Я хочу пять, но можно и четыре, но главное что не три';
+    const STRING = string;
     string = string.toLowerCase();
     string = string.replace(/[^a-zA-ZА-Яа-яЁё]/gi,'').replace(/\s+/gi,', ');
     let dataWord = {};
@@ -18,7 +20,8 @@
     string.split('').map((e) => {
         if (!dataWord[e]) {
             dataWord[e] = new Object();
-            dataWord[e].position =  e.charCodeAt() - ePosition;
+            dataWord[e].word = e;
+            dataWord[e].position =  e.charCodeAt() - regardingLetterPosition;
             dataWord[e].sums = string.split(e).length - 1;
             dataString.push(dataWord[e])
         }
@@ -26,6 +29,16 @@
     dataString.sort(function(a, b){
         return  b.sums - a.sums
     });
+    console.log(dataString);
+    document.writeln(`сообщение: </br>`);
+    document.writeln(`<b>${STRING}</b></br>`);
+    document.writeln(`данные о сообщение:</br>`);
+    document.writeln(`<b>word</b> - буква</br>`);
+    document.writeln(`<b>sums</b> - кол-во вхождений буквы в строку</br>`);
+    document.writeln(`<b>position</b> - положение относительно буквы ${regardingLetter}</br>`);
+    for (data of dataString) {
+        document.writeln(`<pre>${JSON.stringify(data)}</pre></br>`);
+    }
 </script>
 </body>
 </html>
