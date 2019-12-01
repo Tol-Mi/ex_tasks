@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const ePosition = 'е'.charCodeAt();
+    let string = 'АААА ЯЯ ППППППРРРРРРРРГАВАВГРАГВШРГШР';
+    string = string.toLowerCase();
+    string = string.replace(/[^a-zA-ZА-Яа-яЁё]/gi,'').replace(/\s+/gi,', ');
+    let dataWord = {};
+    let dataString = [];
+    string.split('').map((e) => {
+        if (!dataWord[e]) {
+            dataWord[e] = new Object();
+            dataWord[e].position =  e.charCodeAt() - ePosition;
+            dataWord[e].sums = string.split(e).length - 1;
+            dataString.push(dataWord[e])
+        }
+    });
+    dataString.sort(function(a, b){
+        return  b.sums - a.sums
+    });
+</script>
+</body>
+</html>
